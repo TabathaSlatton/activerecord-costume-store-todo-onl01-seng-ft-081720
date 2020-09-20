@@ -1,1 +1,18 @@
 # Create your haunted_houses migration here
+# rake db:migrate
+# rake db:rollback
+
+class CreateHauntedHouses < ActiveRecord::Migration[5.2]
+    def change
+        create_table :haunted_houses do |table|
+            table.string :name
+            table.string :location
+            table.string :theme
+            table.float :price
+            table.boolean :family_friendly
+            table.datetime :opening_date
+            table.datetime  :closing_date
+            table.text :description
+        end
+    end
+end
